@@ -2,10 +2,12 @@ import express, { Request, Response } from 'express';
 import mongoose from 'mongoose';
 import UserController from './controllers/UserController';
 import bodyParser from 'body-parser';
+import cors from 'cors';
 
 const app = express();
 const port = 8000;
 
+app.use(cors());
 app.use(bodyParser.json());
 
 app.get("/", (req: Request, res: Response) => {
